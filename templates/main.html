@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stackoverflow.com</title>
+
+    <script src="{% static "js/jquery-3.2.1.js" %}"></script>
+
+    <link rel="stylesheet" href="{% static "css/reset.css" %}">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+    <script src="{% static "js/js_scripts.js" %}"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-menu">
+                <div class="container">
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                      <a class="navbar-brand" href="/">
+                          <img class="logo_img" src="{% if user.is_authenticated %} {% static "images/logo_mini.jpg" %}
+                          {% else %} {% static "images/logo.jpg" %} {% endif %}"/>
+                      </a>
+                    </div>
+
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav" id="main-nav">
+                            <li class="top-menu-btn" id="nav-1"><a href="{% url 'questions_list' %}">Questions</a></li>
+                            <li class="top-menu-btn"><a href="#" id="nav-2">Developer Jobs</a></li>
+                            <li class="top-menu-btn"><a href="#" id="nav-3">Documentation</a></li>
+                            <li class="top-menu-btn"><a href="#" id="nav-4">Tags</a></li>
+                            <li class="top-menu-btn"><a href="#" id="nav-5">Users</a></li>
+                        </ul>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="input-group" id="top-menu-form">
+                                <input type="text" class="form-control" placeholder="search">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-default" style="padding: 0">
+                                        <span class="glyphicon glyphicon-search" id="glf-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right">
+                            {%  if not user.is_authenticate %}
+                                <li><span class="glyphicon glyphicon-question-sign glyphicon-top-menu top-menu-btn"></span></li>
+                                <li><span class="glyphicon glyphicon-list glyphicon-top-menu top-menu-btn"></span></li>
+                                <li><a id="top-menu-login-btn" href="#">Log In</a></li>
+                                <li><a id="top-menu-signup-btn" href="#">Sign Up</a></li>
+                            {% else %}
+                                <li><div class="top-profile-btn">
+                                    <span style="background-image: ''; float: left"></span>
+                                    <span style="font-weight: bold; text-align: center;">REP</span>
+                                </div> </li>
+                                <li>
+                                    <span class="glyphicon glyphicon-inbox glyphicon-top-menu top-menu-btn"
+                                          title="Resent inbox messages"></span>
+                                </li>
+                                <li>
+                                    <span class="glyphicon glyphicon-certificate glyphicon-top-menu top-menu-btn"
+                                          title="Resent achievements: reputation, badges, and privileges earned"></span>
+                                </li>
+                                <li>
+                                    <span class="glyphicon glyphicon-question-sign glyphicon-top-menu top-menu-btn"></span>
+                                </li>
+                                <li>
+                                    <span class="glyphicon glyphicon-list glyphicon-top-menu top-menu-btn"></span>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px;"></div>
+
+        <div class="row">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+    </div>
+
+    <div class="row" id="footer"></div>
+
+    </div>
+
+
+</body>
+</html>

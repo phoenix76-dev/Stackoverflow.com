@@ -1,0 +1,228 @@
+/* Global */
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+p, h1, h2, h2, h3, h4, h5, h6 {
+    color: #6a737c;
+    text-align: left;
+    font-family: 'Arial';
+}
+
+.left { float: left; }
+.right { float: right; }
+
+.m-5 { margin: 5px; }
+.m-10 { margin: 10px; }
+.m-15 { margin: 15px; }
+.m-20 { margin: 20px; }
+
+.ml-5 { margin-left: 5px; }
+.ml-10 { margin-left: 10px; }
+.ml-15 { margin-left: 15px; }
+.ml-20 { margin-left: 20px; }
+
+.mr-5 { margin-right: 5px; }
+.mr-10 { margin-right: 10px; }
+.mr-15 { margin-right: 15px; }
+.mr-20 { margin-right: 20px; }
+
+.mt-5 { margin-top: 5px; }
+.mt-10 { margin-top: 10px; }
+.mt-15 { margin-top: 15px; }
+.mt-20 { margin-top: 20px; }
+
+.mb-5 { margin-bottom: 5px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-15 { margin-bottom: 15px; }
+.mb-20 { margin-bottom: 20px; }
+
+
+.p-5 { padding: 5px; }
+.p-10 { padding: 10px; }
+.p-15 { padding: 15px; }
+.p-20 { padding: 20px; }
+
+.pl-5 { padding-left: 5px; }
+.pl-10 { padding-left: 10px; }
+.pl-15 { padding-left: 15px; }
+.pl-20 { padding-left: 20px; }
+
+.pr-5 { padding-right: 5px; }
+.pr-10 { padding-right: 10px; }
+.pr-15 { padding-right: 15px; }
+.pr-20 { padding-right: 20px; }
+
+.pt-5 { padding-top: 5px; }
+.pt-10 { padding-top: 10px; }
+.pt-15 { padding-top: 15px; }
+.pt-20 { padding-top: 20px; }
+
+.pb-5 { padding-bottom: 5px; }
+.pb-10 { padding-bottom: 10px; }
+.pb-15 { padding-bottom: 15px; }
+.pb-20 { padding-bottom: 20px; }
+
+/* Top navigation*/
+
+#top-menu {
+    border-top: 4px solid orange;
+    border-bottom: 1px solid #DBDBDB;
+    height: 60px;
+}
+.top-menu-btn:hover {
+    background-color: #EFF0F1;
+}
+.glyphicon-top-menu {
+    color: #848D95;
+    padding: 18px 15px;
+    text-align: center;
+    font-size: 16px;
+}
+.glyphicon-top-menu:hover {
+    cursor: pointer;
+}
+#top-menu-form {
+    margin-top: 3px;
+}
+#glf-search {
+    background-color: #0095FF;
+    line-height: 32px;
+    width: 34px;
+    height: 33px;
+    margin-top: -1px;
+}
+#top-menu-login-btn, #top-menu-signup-btn {
+    height: 30px;
+    margin-top: 10px;
+    padding: 0 10px;
+    line-height: 30px;
+}
+.top-menu-btn {
+    position: relative;
+}
+#top-menu-login-btn {
+    color: #008CDA;
+    margin-right: 3px;
+}
+#top-menu-login-btn:hover {
+    background-color: rgba(0,119,204,0.1);
+}
+#top-menu-signup-btn {
+    background-color: #0095FF;
+    color: #EEFFFF;
+}
+#top-menu-signup-btn:hover {
+    background-color: #0077CC;
+}
+.active-nav-btn {
+    border-bottom: 2px solid orange;
+}
+#main-nav {
+    margin-top: 3px;
+}
+.navbar-right {
+    margin-top: 2px;
+}
+.navbar-brand {
+    padding: 5px 0;
+    margin-right: 10px;
+}
+
+/* Footer */
+
+#footer {
+    background-color: #242729;
+    height: 200px;
+}
+
+/* Question block*/
+
+.qi-item {
+    padding: 10px 10px 15px 10px;
+    border-bottom: 1px solid #E4E6E8;
+}
+.qi-votes, .qi-answers, .qi-views {
+    width: 100%;
+}
+.qi-votes p:first-child, .qi-answers p:first-child {
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+}
+.qi-votes p:last-child, .qi-answers p:last-child {
+    font-size: 11px;
+    text-align: center;
+}
+.qi-views p {
+    font-size: 14px;
+    text-align: center;
+}
+.qi-title-head a {
+    font-size: 18px;
+    color: #33AAFF;
+}
+.qi-title-head a:active {
+    color: #33AAFF;
+}
+.qi-title-head a:hover {
+    color: #33AAFF;
+    text-decoration: none;
+}
+.qi-title-head a:visited {
+    color: #005999;
+}
+.qi-title-head p {
+    font-size: 13px;
+}
+.js-dynamic-tag {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 2px 3px;
+    background-color: #E1ECF4;
+}
+.js-dynamic-tag:hover {
+    background-color: #CEE0ED;
+}
+.js-dynamic-tag a {
+    font-size: 11px;
+    color: #39739D;
+    text-decoration: none;
+}
+.js-hidden-tag-info {
+    position: absolute;
+    left: 0;
+    top: 24px;
+    display: none;
+    background-color: #535A60;
+    padding: 5px;
+    width: 300px;
+    z-index: 10;
+}
+.hidden-tag-info-header {
+    width: 100%;
+    border-bottom: 1px solid #6A737C;
+}
+.hidden-tag-info-header p {
+    width: 100%;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.hidden-tag-info-description {
+    color: #E4E6E8;
+    font-size: 11px;
+    margin-top: 7px;
+}
+.hidden-tag-info-refs li {
+    display: block;
+    float: left;
+    margin-right: 10px;
+}
+.hidden-tag-info-refs a {
+    color: #6CAFE3;
+}

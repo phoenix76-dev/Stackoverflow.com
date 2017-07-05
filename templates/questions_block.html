@@ -1,0 +1,65 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<!-- Questions section -->
+<div class="col-lg-8">
+    <h3 style="width: 100%; border-bottom: 1px solid #E4E6E8">All Questions</h3>
+    {% for question in questions %}
+    <div class="row qi-item">
+        <div class="col-lg-2">
+            <div class="qi-votes">
+                <p>{{ question.question_rep }}</p>
+                <p>votes</p>
+            </div>
+            <div class="qi-answers">
+                <p>{{ question.answers_count }}</p>
+                <p>answers</p>
+            </div>
+            <div class="qi-views">
+                <p>{{ question.views_count }} views</p>
+            </div>
+        </div>
+        <div class="col-lg-10">
+            <div class="row qi-title-head">
+                <a href="{{ question.get_absolute_url }}">{{ question.title }}</a>
+                <p class="mb-5">{{ question.content|truncatechars:220 }}</p>
+            </div>
+            <div class="row">
+                <div class="left qi-tags">
+                    {% for tag in question.tags.all %}
+                        <div class="js-dynamic-tag left mr-5" data-tag-id="{{ tag.id }}">
+                            <a href="#">{{ tag.title }}</a>
+                            <div class="js-hidden-tag-info">
+                                <div class="hidden-tag-info-header">
+                                    <p>{{ tag.title }}</p>
+                                </div>
+                                <p class="hidden-tag-info-description">{{ tag.description }}</p>
+                                <ul class="hidden-tag-info-refs">
+                                    <li><a href="#">frequent</a></li>
+                                    <li><a href="#">info</a></li>
+                                    <li><a href="#">top users</a></li>
+                                    <li><a href="#">jobs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="right qi-user-info user-info-div">
+                    {{ question.creator.first_name|add:question.creator.last_name|add:"<br/>"|add:question.creator.username }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Jobs & other -->
+<div class="col-lg-4" style="border: 1px solid black; height: 1000px;">
+    <p>Work</p>
+    <p>Related</p>
+    <p>Links</p>
+    <p>etc</p>
+</div>
+
+{% endblock %}
