@@ -30,18 +30,6 @@
                     {% for tag in question.tags.all %}
                         <div class="js-dynamic-tag left mr-5" data-tag-id="{{ tag.id }}">
                             <a href="#">{{ tag.title }}</a>
-                            <div class="js-hidden-tag-info">
-                                <div class="hidden-tag-info-header">
-                                    <p>{{ tag.title }}</p>
-                                </div>
-                                <p class="hidden-tag-info-description">{{ tag.description }}</p>
-                                <ul class="hidden-tag-info-refs">
-                                    <li><a href="#">frequent</a></li>
-                                    <li><a href="#">info</a></li>
-                                    <li><a href="#">top users</a></li>
-                                    <li><a href="#">jobs</a></li>
-                                </ul>
-                            </div>
                         </div>
                     {% endfor %}
                 </div>
