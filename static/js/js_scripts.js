@@ -2,15 +2,6 @@
  * Created by user on 01.07.2017.
  */
 
-function checkLogin() {
-    if(logged_in) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
 $(document).ready(function () {
 
     // Select active section in top menu
@@ -32,28 +23,37 @@ $(document).ready(function () {
    }
 
 
-   $('.js-dynamic-tag').on('mouseover', function () {
-       var block = $(this).find('.js-hidden-tag-info');
+   $('.js-dynamic-tag').on('mouseenter', function (e) {
+       var block;
+       if($(e.target).parents('.js-dynamic-tag').length) {
+           return false;
+       }
+       block = $(e.target).find('.js-hidden-tag-info');
        if(!block.length) {
-           var tag_id = $(this.attr('data-tag-id'));
+           var tag_id = $(e.target).attr('data-tag-id');
            $.ajax({
-               url: '/tags/ajax_get_tag_sticker?tag_id=' + tag_id,
-               method: 'GET'
+               url: '/tags/ajax_get_tag_sticker/',
+               type: 'get',
+               data: {
+                   tag_id: tag_id
+               }
            })
                .done(function (data) {
-                   $(this).appendChild(data.html());
-                   $(this).find('.js-hidden-tag-info').css('display', 'block');
+                   $(e.target).append(data);
+                   $(e.target).find('.js-hidden-tag-info').fadeIn(400);
                });
        }
        else {
            block.css('display', 'block');
        }
+   }).on('mouseleave', function (e) {
+       var block = $(e.target);
+       if(block.hasClass('.js-hidden-tag-info')) {
+           block.fadeOut(400);
+       }
+       else if($('div.js-hidden-tag-info:first', this).length) {
+           $('div.js-hidden-tag-info:first', this).fadeOut(400);
+       }
    });
 
-   $('.js-dynamic-tag').on('mouseleave', function () {
-       var block = $(this).find('.js-hidden-tag-info');
-       if(!block.length) {
-           block.css('display', 'none');
-       }
-   })
 });

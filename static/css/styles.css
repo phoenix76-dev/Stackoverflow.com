@@ -181,7 +181,7 @@ p, h1, h2, h2, h3, h4, h5, h6 {
     position: relative;
     width: auto;
     height: auto;
-    padding: 2px 3px;
+    padding: 2px 6px;
     background-color: #E1ECF4;
 }
 .js-dynamic-tag:hover {
